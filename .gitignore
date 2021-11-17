@@ -26,5 +26,4 @@ pnpm-debug.log*
 *.sw?
 
 .vercel
-
 firebase.js
