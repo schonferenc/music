@@ -1,22 +1,22 @@
 <template>
   <!-- Header -->
   <header id="header" class="bg-gray-700">
-    <nav class="container mx-auto flex justify-start items-center py-5 px-4">
+    <nav class=" mx-auto flex justify-start items-center py-5 px-8">
       <!-- App Name -->
       <router-link class="text-white font-bold uppercase text-2xl mr-4"
         :to="{ name: 'home' }" exact-active-class="no-active">
         Music
       </router-link>
 
-      <div class="flex flex-grow items-center">
+      <div class="flex flex-grow items-center justify-end text-md">
         <!-- Primary Navigation -->
         <ul class="flex flex-row mt-1">
           <!-- Navigation Links -->
-          <li>
+          <!-- <li>
             <router-link class="px-2 text-white" :to="{ name: 'about' }">
               About
             </router-link>
-          </li>
+          </li> -->
           <li v-if="!userLoggedIn">
             <a class="px-2 text-white" href="#" @click.prevent="toggleAuthModal">
               Login / Register
@@ -34,13 +34,14 @@
             </li>
           </template>
         </ul>
-        <ul class="flex flex-row mt-1 ml-auto">
+        <!-- select language -->
+        <!-- <ul class="flex flex-row mt-1 ml-auto">
           <li>
             <a class="px-2 text-white" href="#" @click.prevent="changeLocale">
               {{ currentLocale }}
             </a>
           </li>
-        </ul>
+        </ul> -->
       </div>
     </nav>
   </header>
@@ -67,7 +68,6 @@ export default {
         route: this.$route,
       });
 
-      // console.log(this.$route);
       if (this.$route.meta.requiresAuth) {
         this.$router.push({ name: 'home' });
       }
@@ -75,9 +75,6 @@ export default {
     changeLocale() {
       this.$i18n.locale = this.$i18n.locale === 'fr' ? 'en' : 'fr';
     },
-    // toggleAuthModal() {
-    //   this.$store.commit('toggleAuthModal');
-    // },
   },
 };
 </script>

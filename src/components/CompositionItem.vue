@@ -36,13 +36,13 @@
             @input="updateUnsavedFlag(true)" />
           <ErrorMessage class="text-red-600" name="genre" />
         </div>
-        <button type="submit" class="py-1.5 px-3 rounded text-white bg-green-600"
+        <button type="submit" class="py-1.5 px-3 mt-2 mr-2 rounded text-sm text-white bg-green-600"
           :disabled="in_submission">
           Submit
         </button>
-        <button type="button" class="py-1.5 px-3 rounded text-white bg-gray-600"
+        <button type="button" class="py-1.5 px-3 mt-2 rounded text-white text-sm bg-gray-600"
           :disabled="in_submission" @click.prevent="showForm = false">
-          Go Back
+          Close
         </button>
       </vee-form>
     </div>

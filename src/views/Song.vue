@@ -2,20 +2,20 @@
   <main>
     <!-- Music Header -->
     <section class="w-full mb-8 py-14 text-center text-white relative">
-      <div class="absolute inset-0 w-full h-full box-border bg-contain music-bg"
+      <div class="absolute inset-0 w-full h-full box-border bg-cover lg:bg-contain music-bg"
         style="background-image: url(/assets/img/song-header.png)">
       </div>
-      <div class="container mx-auto flex items-center">
+      <div class="container mx-auto flex items-center px-4">
         <!-- Play/Pause Button -->
-        <button type="button" class="z-50 h-24 w-24 text-3xl bg-white text-black rounded-full
+        <button type="button" class="z-50 lg:h-24 lg:w-24 h-16 w-16
+         lg:text-3xl text-xl bg-white text-black rounded-full
           focus:outline-none" @click.prevent="newSong(song)" id="play-button">
           <i class="fas fa-play"></i>
         </button>
-        <div class="z-50 text-left ml-8">
+        <div class="z-50 text-left ml-8 w-2/3 ">
           <!-- Song Info -->
-          <div class="text-3xl font-bold">{{ song.modified_name }}</div>
+          <div class="lg:text-3xl text-xl font-bold">{{ song.modified_name }}</div>
           <div>{{ song.genre }}</div>
-          <div class="song-price">{{ $n(1, 'currency', 'ja') }} </div>
         </div>
       </div>
     </section>

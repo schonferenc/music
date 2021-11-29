@@ -20,7 +20,7 @@
         @drop.prevent.stop="upload($event)">
         <h5>Drop your files here</h5>
       </div>
-      <input type="file" multiple @change="upload($event)" />
+      <input class="lg:text-sm text-xs w-full" type="file" multiple @change="upload($event)" />
       <hr class="my-6" />
       <!-- Progess Bars -->
       <div class="mb-4" v-for="upload in uploads" :key="upload.name">
